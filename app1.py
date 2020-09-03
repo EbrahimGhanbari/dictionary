@@ -2,15 +2,8 @@ import json
 from difflib import get_close_matches
 
 
-
 with open("data.json") as fileContent:
     content = json.load(fileContent)
-
-def wordSuggestion(word):
-    suggestedWord = get_close_matches(word, content.keys())[0]
-    confirmation = input(f"Unfortunately we could not find {word}! Did you mean {suggestedWord}? (Y/N) ")
-    if confirmation.lower() == "y":
-        return translate(suggestedWord)
 
 
 def translate(word):
